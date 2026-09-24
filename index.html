@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
   <!-- Google Fonts & Lucide Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
-  
+
   <style>
     :root[data-theme="light"] {
       --bg-dark: #f8fafc;
@@ -89,77 +92,158 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      height: 64px;
       background: var(--bg-header);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-color);
-      padding: 0.75rem 1.5rem;
+      padding: 0 1.75rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
 
-    .brand-logo {
+    .brand-logo-container {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.85rem;
+    }
+
+    .brand-icon-box {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(5, 150, 105, 0.12);
+      color: var(--accent-emerald);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .brand-text-stack {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .brand-subtitle {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .nav-tabs-track {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border-color);
+      padding: 4px;
+      border-radius: 12px;
+    }
+
+    :root[data-theme="dark"] .nav-tabs-track {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-tab-btn:hover {
       color: var(--text-main);
     }
-    .brand-logo i {
+
+    .nav-tab-btn.active {
+      background: var(--bg-card);
       color: var(--accent-emerald);
-    }
-    .badge-nraa {
-      background: rgba(5, 150, 105, 0.1);
-      color: var(--accent-emerald);
-      border: 1px solid var(--border-accent);
-      padding: 0.2rem 0.65rem;
-      border-radius: 20px;
-      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     }
 
     .pres-controls {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.6rem;
     }
 
-    .btn-nav {
+    .btn-icon-action {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
       background: var(--bg-card);
       color: var(--text-main);
       border: 1px solid var(--border-color);
-      padding: 0.5rem 0.9rem;
-      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      font-size: 0.85rem;
-      font-weight: 600;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn-icon-action:hover {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald);
+      transform: translateY(-1px);
+    }
+
+    .btn-script-notes {
+      height: 36px;
+      padding: 0 0.85rem;
+      border-radius: 9px;
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
       transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
-    .btn-nav:hover {
-      background: var(--bg-card-hover);
+
+    .btn-script-notes:hover {
       border-color: var(--accent-emerald);
       color: var(--accent-emerald);
     }
-    .btn-nav.active {
+
+    .btn-script-notes.active {
       background: var(--accent-emerald);
       color: #ffffff;
       border-color: var(--accent-emerald);
     }
 
-    .slide-indicator {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      min-width: 90px;
-      text-align: center;
+    .slide-counter-badge {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      background: rgba(5, 150, 105, 0.1);
+      border: 1px solid var(--border-accent);
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
     }
 
     /* Progress bar */
@@ -171,6 +255,7 @@
       height: 3px;
       background: rgba(0, 0, 0, 0.05);
     }
+
     .progress-bar-fill {
       height: 100%;
       width: 16.66%;
@@ -188,9 +273,11 @@
       gap: 1rem;
       animation: fadeIn 0.3s ease;
     }
+
     .speaker-notes-banner.show {
       display: flex;
     }
+
     .speaker-notes-badge {
       background: var(--notes-badge-bg);
       color: var(--notes-badge-text);
@@ -204,6 +291,7 @@
       align-items: center;
       gap: 0.4rem;
     }
+
     .speaker-notes-text {
       font-size: 0.95rem;
       color: var(--notes-text);
@@ -228,23 +316,38 @@
       max-width: 1200px;
       animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
+
     .slide.active {
       display: block;
     }
 
     @keyframes slideIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     /* Typography & Slide Layouts */
     .slide-header {
       margin-bottom: 2rem;
     }
+
     .slide-tag {
       font-size: 0.8rem;
       font-weight: 800;
@@ -256,6 +359,7 @@
       align-items: center;
       gap: 0.5rem;
     }
+
     .slide-title {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 2.35rem;
@@ -264,6 +368,7 @@
       color: var(--text-main);
       letter-spacing: -0.5px;
     }
+
     .slide-subtitle {
       color: var(--text-muted);
       font-size: 1.05rem;
@@ -278,6 +383,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
     }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -295,6 +401,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .glass-card:hover {
       border-color: var(--accent-emerald);
       transform: translateY(-3px);
@@ -317,14 +424,17 @@
       justify-content: center;
       margin-bottom: 1.25rem;
     }
+
     .card-icon-box.blue {
       background: rgba(37, 99, 235, 0.1);
       color: var(--accent-blue);
     }
+
     .card-icon-box.amber {
       background: rgba(217, 119, 6, 0.1);
       color: var(--accent-amber);
     }
+
     .card-icon-box.cyan {
       background: rgba(2, 132, 199, 0.1);
       color: var(--accent-cyan);
@@ -337,6 +447,7 @@
       margin-bottom: 0.5rem;
       color: var(--text-main);
     }
+
     .card-desc {
       color: var(--text-muted);
       font-size: 0.93rem;
@@ -351,6 +462,7 @@
       flex-direction: column;
       gap: 0.65rem;
     }
+
     .feature-list li {
       display: flex;
       align-items: flex-start;
@@ -359,6 +471,7 @@
       color: var(--text-main);
       line-height: 1.4;
     }
+
     .feature-list li i {
       color: var(--accent-emerald);
       margin-top: 2px;
@@ -374,6 +487,7 @@
       margin: 1.5rem 0;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
     }
+
     .script-callout p {
       font-size: 1.05rem;
       line-height: 1.65;
@@ -381,6 +495,7 @@
       font-style: italic;
       font-weight: 500;
     }
+
     .script-callout .label {
       font-size: 0.75rem;
       text-transform: uppercase;
@@ -402,6 +517,7 @@
       padding: 1.6rem;
       box-shadow: var(--card-shadow);
     }
+
     .demo-header {
       display: flex;
       align-items: center;
@@ -410,6 +526,7 @@
       padding-bottom: 0.75rem;
       border-bottom: 1px solid var(--border-color);
     }
+
     .demo-title {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.15rem;
@@ -419,6 +536,7 @@
       gap: 0.5rem;
       color: var(--accent-amber);
     }
+
     .time-badge {
       font-size: 0.8rem;
       background: rgba(217, 119, 6, 0.1);
@@ -434,6 +552,7 @@
       flex-direction: column;
       gap: 0.75rem;
     }
+
     .demo-step-item {
       display: flex;
       align-items: center;
@@ -445,11 +564,14 @@
       cursor: pointer;
       transition: all 0.2s ease;
     }
-    .demo-step-item:hover, .demo-step-item.active {
+
+    .demo-step-item:hover,
+    .demo-step-item.active {
       border-color: var(--accent-emerald);
       background: var(--bg-card-hover);
       transform: translateX(4px);
     }
+
     .step-num {
       width: 30px;
       height: 30px;
@@ -463,6 +585,7 @@
       justify-content: center;
       flex-shrink: 0;
     }
+
     .step-text {
       font-size: 0.93rem;
       font-weight: 600;
@@ -476,6 +599,7 @@
       display: flex;
       gap: 0.5rem;
     }
+
     .url-input-group {
       flex: 1;
       display: flex;
@@ -485,10 +609,12 @@
       border-radius: 8px;
       padding: 0 0.8rem;
     }
+
     .url-input-group i {
       color: var(--text-dim);
       margin-right: 0.5rem;
     }
+
     .url-input {
       width: 100%;
       background: transparent;
@@ -499,6 +625,7 @@
       padding: 0.6rem 0;
       outline: none;
     }
+
     .btn-launch {
       background: linear-gradient(135deg, var(--accent-emerald), #047857);
       color: #ffffff;
@@ -515,6 +642,7 @@
       text-decoration: none;
       box-shadow: 0 2px 6px rgba(5, 150, 105, 0.25);
     }
+
     .btn-launch:hover {
       box-shadow: 0 4px 15px var(--accent-emerald-glow);
       transform: translateY(-1px);
@@ -529,11 +657,13 @@
       margin-top: 1rem;
       box-shadow: var(--card-shadow);
     }
+
     table.matrix-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
     }
+
     table.matrix-table th {
       background: #f1f5f9;
       padding: 1.1rem 1.25rem;
@@ -544,6 +674,7 @@
       color: var(--accent-emerald);
       border-bottom: 1px solid var(--border-color);
     }
+
     :root[data-theme="dark"] table.matrix-table th {
       background: rgba(15, 23, 42, 0.9);
     }
@@ -554,9 +685,11 @@
       font-size: 0.92rem;
       vertical-align: middle;
     }
+
     table.matrix-table tr:last-child td {
       border-bottom: none;
     }
+
     table.matrix-table tr:hover td {
       background: var(--bg-card-hover);
     }
@@ -569,9 +702,26 @@
       font-size: 1.05rem;
       color: var(--text-main);
     }
-    .portal-tag-jdh { color: #2563eb; }
-    .portal-tag-rwi { color: #059669; }
-    .portal-tag-savya { color: #d97706; }
+
+    .portal-tag-jdh {
+      color: #2563eb;
+    }
+
+    .portal-tag-rwi {
+      color: #059669;
+    }
+
+    .portal-tag-savya {
+      color: #d97706;
+    }
+
+    .portal-tag-utkoor {
+      color: #0284c7;
+    }
+
+    .portal-tag-drone {
+      color: #7c3aed;
+    }
 
     .feature-tag-chip {
       display: inline-block;
@@ -597,6 +747,7 @@
       align-items: center;
       gap: 0.4rem;
     }
+
     .pulse-dot {
       width: 7px;
       height: 7px;
@@ -605,10 +756,19 @@
       box-shadow: 0 0 8px var(--accent-emerald);
       animation: pulse 1.5s infinite;
     }
+
     @keyframes pulse {
-      0% { opacity: 0.4; }
-      50% { opacity: 1; }
-      100% { opacity: 0.4; }
+      0% {
+        opacity: 0.4;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.4;
+      }
     }
 
     /* NRAA Capability Bridge Grid */
@@ -617,6 +777,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
     }
+
     .bridge-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -627,32 +788,38 @@
       gap: 0.5rem;
       box-shadow: var(--card-shadow);
     }
+
     .bridge-card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+
     .bridge-req-title {
       font-weight: 700;
       font-size: 1.05rem;
       color: var(--text-main);
     }
+
     .status-pill {
       font-size: 0.75rem;
       font-weight: 800;
       padding: 0.25rem 0.65rem;
       border-radius: 12px;
     }
+
     .status-pill.ready {
       background: rgba(5, 150, 105, 0.12);
       color: var(--accent-emerald);
       border: 1px solid rgba(5, 150, 105, 0.3);
     }
+
     .status-pill.adaptable {
       background: rgba(37, 99, 235, 0.12);
       color: var(--accent-blue);
       border: 1px solid rgba(37, 99, 235, 0.3);
     }
+
     .status-pill.custom {
       background: rgba(217, 119, 6, 0.12);
       color: var(--accent-amber);
@@ -664,6 +831,7 @@
       color: var(--text-muted);
       line-height: 1.5;
     }
+
     .bridge-source span {
       color: var(--accent-emerald);
       font-weight: 700;
@@ -672,17 +840,62 @@
     /* Footer Controls */
     footer.pres-footer {
       background: var(--bg-header);
+      backdrop-filter: blur(16px);
       border-top: 1px solid var(--border-color);
-      padding: 0.85rem 1.5rem;
+      padding: 0.85rem 1.75rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 -1px 3px rgba(0,0,0,0.04);
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03);
     }
+
     .nav-buttons-footer {
       display: flex;
+      align-items: center;
       gap: 0.75rem;
     }
+
+    .btn-nav-prev,
+    .btn-nav-next {
+      height: 40px;
+      padding: 0 1.25rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      text-decoration: none;
+    }
+
+    .btn-nav-prev {
+      background: var(--bg-card);
+      color: var(--text-main);
+    }
+
+    .btn-nav-prev:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald);
+      transform: translateX(-2px);
+    }
+
+    .btn-nav-next {
+      background: linear-gradient(135deg, var(--accent-emerald), #047857);
+      color: #ffffff;
+      border-color: var(--accent-emerald);
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+    }
+
+    .btn-nav-next:hover {
+      box-shadow: 0 4px 14px var(--accent-emerald-glow);
+      transform: translateX(2px);
+    }
+
     .time-counter {
       font-family: monospace;
       font-size: 0.9rem;
@@ -700,6 +913,7 @@
       overflow-x: auto;
       padding-bottom: 0.2rem;
     }
+
     .jump-chip {
       background: var(--bg-dark);
       border: 1px solid var(--border-color);
@@ -712,10 +926,12 @@
       white-space: nowrap;
       transition: all 0.2s ease;
     }
+
     .jump-chip:hover {
       border-color: var(--accent-emerald);
       color: var(--accent-emerald);
     }
+
     .jump-chip.active {
       background: rgba(5, 150, 105, 0.12);
       border-color: var(--accent-emerald);
@@ -723,54 +939,43 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Top Header Navigation -->
   <header class="pres-header">
-    <div class="brand-logo">
-      <i data-lucide="layers"></i>
-      <span>NRAA Portal Credentials Presentation</span>
-      <span class="badge-nraa">Live Interactive Deck</span>
+    <div class="brand-logo-container">
+      <div class="brand-icon-box">
+        <i data-lucide="shield-check"></i>
+      </div>
+      <div class="brand-text-stack">
+        <span class="brand-title">NRAA Portal Capabilities</span>
+        <span class="brand-subtitle">Credentials Presentation</span>
+      </div>
     </div>
 
-    <div class="quick-jump-menu">
-      <button class="jump-chip active" onclick="goToSlide(0)">1. Intro</button>
-      <button class="jump-chip" onclick="goToSlide(1)">2. Summary Table</button>
-      <button class="jump-chip" onclick="goToSlide(2)">3. JDH Portal</button>
-      <button class="jump-chip" onclick="goToSlide(3)">4. RWI Portal</button>
-      <button class="jump-chip" onclick="goToSlide(4)">5. SAVYA Platform</button>
-      <button class="jump-chip" onclick="goToSlide(5)">6. NRAA Transition</button>
+    <div class="nav-tabs-track">
+      <button class="nav-tab-btn active" onclick="goToSlide(0)">1. Intro</button>
+      <button class="nav-tab-btn" onclick="goToSlide(1)">2. Overview</button>
+      <button class="nav-tab-btn" onclick="goToSlide(2)">3. JDH</button>
+      <button class="nav-tab-btn" onclick="goToSlide(3)">4. RWI</button>
+      <button class="nav-tab-btn" onclick="goToSlide(4)">5. SAVYA</button>
     </div>
 
     <div class="pres-controls">
-      <button class="btn-nav" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Light / Dark Mode">
-        <i data-lucide="sun" id="themeIcon"></i>
-        <span id="themeText">Dark Theme</span>
+      <button class="btn-icon-action" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Theme (Light / Dark)">
+        <i data-lucide="moon" id="themeIcon"></i>
       </button>
-      <button class="btn-nav" id="notesToggleBtn" onclick="toggleSpeakerNotes()" title="Toggle Presenter Speech Script">
-        <i data-lucide="message-square"></i>
-        <span>Script Notes</span>
-      </button>
-      <button class="btn-nav" onclick="toggleFullscreen()" title="Toggle Fullscreen Mode">
+      <button class="btn-icon-action" onclick="toggleFullscreen()" title="Toggle Fullscreen">
         <i data-lucide="maximize"></i>
       </button>
-      <span class="slide-indicator" id="slideIndicator">Slide 1 / 6</span>
+      <div class="slide-counter-badge" id="slideIndicator">01 / 05</div>
     </div>
 
     <div class="progress-bar-container">
       <div class="progress-bar-fill" id="progressBar"></div>
     </div>
   </header>
-
-  <!-- Presenter Notes Banner (Dynamic per slide) -->
-  <div class="speaker-notes-banner" id="speakerNotesBanner">
-    <div class="speaker-notes-badge">
-      <i data-lucide="mic"></i> Presenter Script
-    </div>
-    <div class="speaker-notes-text" id="speakerNotesContent">
-      "We have reviewed the requirements shared for the NRAA portal. Before discussing how we would implement those requirements, we would like to show you some of the applications and websites that we have already developed and are currently working with..."
-    </div>
-  </div>
 
   <!-- Main Presentation Stage -->
   <main class="presentation-stage">
@@ -779,56 +984,63 @@
     <div class="slide active" id="slide-0">
       <div class="slide-header">
         <div class="slide-tag">
-          <i data-lucide="sparkles"></i> Introduction & Executive Overview
+          <i data-lucide="sparkles"></i> Technical Capabilities & Experience
         </div>
-        <h1 class="slide-title">Experience & Capability Demonstration</h1>
-        <p class="slide-subtitle">Proven Digital Platforms & Spatial Infrastructure Relevant to the NRAA Portal Requirements</p>
+        <h1 class="slide-title">Core Capabilities Built in Past Initiatives</h1>
+        <p class="slide-subtitle">Proven technical capacity across spatial engineering, data systems, and government digital portals</p>
       </div>
 
-      <div class="script-callout">
-        <div class="label"><i data-lucide="quote"></i> Presenter Opening Statement</div>
-        <p>
-          "We have reviewed the requirements shared for the NRAA portal. Before discussing how we would implement those requirements, we would like to show you some of the applications and websites that we have already developed and are currently working with. These examples will give you a practical understanding of our experience and the type of functionality we can provide."
-        </p>
-      </div>
+
 
       <div class="grid-3" style="margin-top: 2rem;">
+        <!-- Card 1: GIS Spatial Analysis -->
         <div class="glass-card highlight">
           <div class="card-icon-box blue">
             <i data-lucide="map-pin"></i>
           </div>
-          <h3 class="card-title">JDH</h3>
-          <p class="card-desc">Jiwi Daah Hasa Platform</p>
+          <h3 class="card-title">GIS & Spatial Analysis</h3>
+          <p class="card-desc">Comprehensive spatial data processing, multi-layer mapping & watershed intelligence</p>
           <ul class="feature-list">
-            <li><i data-lucide="check-circle-2"></i> Jharkhand Programme Monitoring</li>
-            <li><i data-lucide="check-circle-2"></i> Multi-tier GIS & Map Layers</li>
-            <li><i data-lucide="check-circle-2"></i> DPR & Project Data Management</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Multi-Tier Geo Hierarchy:</strong> State &rarr; District
+              &rarr; Block &rarr; Village mapping</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Watershed & Thematic Layers:</strong> Spatial zoning,
+              hydrology & slope overlays</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Plot Geo-Tagging:</strong> Farm boundary digitisation &
+              coordinate verification</li>
           </ul>
         </div>
 
-        <div class="glass-card highlight">
-          <div class="card-icon-box cyan">
-            <i data-lucide="droplet"></i>
-          </div>
-          <h3 class="card-title">RWI</h3>
-          <p class="card-desc">Rayalaseema Water Initiative</p>
-          <ul class="feature-list">
-            <li><i data-lucide="check-circle-2"></i> Regional Water & Agri Information</li>
-            <li><i data-lucide="check-circle-2"></i> Document & Resource Repository</li>
-            <li><i data-lucide="check-circle-2"></i> Project & Event Showcase</li>
-          </ul>
-        </div>
-
+        <!-- Card 2: Data Analytics -->
         <div class="glass-card highlight">
           <div class="card-icon-box amber">
-            <i data-lucide="sprout"></i>
+            <i data-lucide="bar-chart-3"></i>
           </div>
-          <h3 class="card-title">SAVYA</h3>
-          <p class="card-desc">Natural Farming Digital Platform</p>
+          <h3 class="card-title">Data Analysis & Monitoring</h3>
+          <p class="card-desc">End-to-end data intake engines, beneficiary registries & executive dashboards</p>
           <ul class="feature-list">
-            <li><i data-lucide="check-circle-2"></i> Household & Farmer Plot Profiling</li>
-            <li><i data-lucide="check-circle-2"></i> Field Digital Data Collection</li>
-            <li><i data-lucide="check-circle-2"></i> Real-time Executive Dashboards</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Digital Field Intake:</strong> Structured mobile-friendly
+              survey workflows</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Household & Farm Profiling:</strong> Beneficiary databases
+              & baseline surveys</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Executive Dashboards:</strong> Real-time KPI charts, DPR
+              tracking & reports</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Web Development -->
+        <div class="glass-card highlight">
+          <div class="card-icon-box cyan">
+            <i data-lucide="globe"></i>
+          </div>
+          <h3 class="card-title">Web & Portal Development</h3>
+          <p class="card-desc">Secure, high-performance web applications tailored for government & regional programs</p>
+          <ul class="feature-list">
+            <li><i data-lucide="check-circle-2"></i> <strong>Knowledge Repositories:</strong> Searchable document stores
+              & policy libraries</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Role-Based Access:</strong> Multi-stakeholder permission
+              hierarchies</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Modern Scalable Architecture:</strong> Responsive, fast &
+              cloud-ready portals</li>
           </ul>
         </div>
       </div>
@@ -841,7 +1053,8 @@
           <i data-lucide="table"></i> Credentials Summary
         </div>
         <h1 class="slide-title">Application Portfolio Overview</h1>
-        <p class="slide-subtitle">Quick comparison of developed platforms, core features, and live demonstration links</p>
+        <p class="slide-subtitle">Quick comparison of developed platforms, core features, and live demonstration links
+        </p>
       </div>
 
       <div class="matrix-table-wrapper">
@@ -851,8 +1064,7 @@
               <th>Website / Platform</th>
               <th>Primary Purpose</th>
               <th>Main Capabilities & Features</th>
-              <th>Live Demo Link</th>
-              <th>Status</th>
+              <th>Link</th>
             </tr>
           </thead>
           <tbody>
@@ -863,7 +1075,7 @@
                 </div>
                 <div style="font-size: 0.75rem; color: var(--text-dim);">Jiwi Daah Hasa</div>
               </td>
-              <td>Programme Data & GIS Monitoring</td>
+              <td>Programme Data, GIS & Progress Monitoring</td>
               <td>
                 <span class="feature-tag-chip">GIS & Maps</span>
                 <span class="feature-tag-chip">State/District/Block/Village</span>
@@ -871,12 +1083,10 @@
                 <span class="feature-tag-chip">Dashboards</span>
               </td>
               <td>
-                <a href="#" class="btn-launch" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;" onclick="goToSlide(2); return false;">
-                  <i data-lucide="external-link"></i> Launch Demo
+                <a href="#" class="btn-launch" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;"
+                  onclick="goToSlide(2); return false;">
+                  <i data-lucide="external-link"></i> Visit
                 </a>
-              </td>
-              <td>
-                <span class="status-badge-live"><span class="pulse-dot"></span> Live Ready</span>
               </td>
             </tr>
 
@@ -887,7 +1097,7 @@
                 </div>
                 <div style="font-size: 0.75rem; color: var(--text-dim);">Rayalaseema Water Initiative</div>
               </td>
-              <td>Programme & Project Information</td>
+              <td>Programme Data, GIS & Progress Monitoring</td>
               <td>
                 <span class="feature-tag-chip">Projects & Initiatives</span>
                 <span class="feature-tag-chip">Resources & Library</span>
@@ -895,12 +1105,10 @@
                 <span class="feature-tag-chip">Regional Data</span>
               </td>
               <td>
-                <a href="#" class="btn-launch" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;" onclick="goToSlide(3); return false;">
-                  <i data-lucide="external-link"></i> Launch Demo
+                <a href="#" class="btn-launch" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;"
+                  onclick="goToSlide(3); return false;">
+                  <i data-lucide="external-link"></i> Visit
                 </a>
-              </td>
-              <td>
-                <span class="status-badge-live"><span class="pulse-dot"></span> Live Ready</span>
               </td>
             </tr>
 
@@ -919,12 +1127,56 @@
                 <span class="feature-tag-chip">Monitoring Dashboard</span>
               </td>
               <td>
-                <a href="#" class="btn-launch" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;" onclick="goToSlide(4); return false;">
-                  <i data-lucide="external-link"></i> Launch Demo
+                <a href="#" class="btn-launch" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;"
+                  onclick="goToSlide(4); return false;">
+                  <i data-lucide="external-link"></i> Visit
                 </a>
               </td>
+            </tr>
+
+            <!-- Row 4: UTKOOR Portal -->
+            <tr>
               <td>
-                <span class="status-badge-live"><span class="pulse-dot"></span> Live Ready</span>
+                <div class="portal-badge portal-tag-utkoor">
+                  <i data-lucide="map"></i> UTKOOR
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-dim);">Micro-Watershed GIS Portal</div>
+              </td>
+              <td>Village Geospatial & Watershed Analytics</td>
+              <td>
+                <span class="feature-tag-chip">Cadastral Maps</span>
+                <span class="feature-tag-chip">Micro-Watershed GIS</span>
+                <span class="feature-tag-chip">Water Assets</span>
+                <span class="feature-tag-chip">Spatial Layers</span>
+              </td>
+              <td>
+                <a href="https://gowtam-wassan.github.io/UTKOOR_Portal/" target="_blank" class="btn-launch"
+                  style="padding: 0.35rem 0.75rem; font-size: 0.78rem; background: linear-gradient(135deg, #0284c7, #0369a1);">
+                  <i data-lucide="external-link"></i> Visit
+                </a>
+              </td>
+            </tr>
+
+            <!-- Row 5: Drone Mapping -->
+            <tr>
+              <td>
+                <div class="portal-badge portal-tag-drone">
+                  <i data-lucide="crosshair"></i> Drone Survey
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-dim);">High-Res Spatial Mapping</div>
+              </td>
+              <td>Drone Imagery & Topographic Analytics</td>
+              <td>
+                <span class="feature-tag-chip">Orthomosaic Maps</span>
+                <span class="feature-tag-chip">DEM & Elevations</span>
+                <span class="feature-tag-chip">3D Topography</span>
+                <span class="feature-tag-chip">Contour Layers</span>
+              </td>
+              <td>
+                <a href="https://gowtam-wassan.github.io/Drone_Mapping/" target="_blank" class="btn-launch"
+                  style="padding: 0.35rem 0.75rem; font-size: 0.78rem; background: linear-gradient(135deg, #7c3aed, #6d28d9);">
+                  <i data-lucide="external-link"></i> Visit
+                </a>
               </td>
             </tr>
           </tbody>
@@ -939,7 +1191,8 @@
           <i data-lucide="map"></i> Application Demonstration #1
         </div>
         <h1 class="slide-title">JDH – Jiwi Daah Hasa</h1>
-        <p class="slide-subtitle">Digital platform for managing and monitoring the Jharkhand programme and related spatial data</p>
+        <p class="slide-subtitle">Digital platform for managing and monitoring the Jharkhand programme and related
+          spatial data</p>
       </div>
 
       <div class="grid-2">
@@ -950,12 +1203,16 @@
           </div>
           <h3 class="card-title">Core System Capabilities</h3>
           <p class="card-desc">Key modules developed for spatial monitoring and administrative reporting</p>
-          
+
           <ul class="feature-list" style="margin-top: 1.25rem;">
-            <li><i data-lucide="check-circle-2"></i> <strong>Geographical Data Structure:</strong> Multi-tier drill-down across State → District → Block → Village.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>GIS / Map Integration:</strong> Spatial thematic layers, watershed boundaries, and interactive maps.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Programme & DPR Management:</strong> Detailed Project Report tracking, work status, and progress monitoring.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Analytical Dashboards:</strong> Automated reporting engines and data export utilities.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Geographical Data Structure:</strong> Multi-tier drill-down
+              across State → District → Block → Village.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>GIS / Map Integration:</strong> Spatial thematic layers,
+              watershed boundaries, and interactive maps.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Programme & DPR Management:</strong> Detailed Project
+              Report tracking, work status, and progress monitoring.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Analytical Dashboards:</strong> Automated reporting engines
+              and data export utilities.</li>
           </ul>
         </div>
 
@@ -963,9 +1220,8 @@
         <div class="demo-steps-container">
           <div class="demo-header">
             <div class="demo-title">
-              <i data-lucide="play-circle"></i> Demonstration Walkthrough
+              <i data-lucide="play-circle"></i> Features
             </div>
-            <span class="time-badge">3 – 5 Minutes</span>
           </div>
 
           <div class="demo-steps">
@@ -999,10 +1255,12 @@
           <div class="url-launcher-bar">
             <div class="url-input-group">
               <i data-lucide="link"></i>
-              <input type="text" class="url-input" id="jdhUrl" value="https://jdh-portal.jharkhand.gov.in" placeholder="Enter JDH Live URL">
+              <input type="text" class="url-input" id="jdhUrl" value="https://dashboard.jiwidaahhasa.in/"
+                placeholder="Enter JDH Live URL">
             </div>
-            <a href="https://jdh-portal.jharkhand.gov.in" target="_blank" class="btn-launch" id="jdhLaunchBtn" onclick="launchUrl('jdhUrl'); return false;">
-              <i data-lucide="external-link"></i> Launch Live Website
+            <a href="https://dashboard.jiwidaahhasa.in/" target="_blank" class="btn-launch" id="jdhLaunchBtn"
+              onclick="launchUrl('jdhUrl'); return false;">
+              <i data-lucide="external-link"></i> Visit Website
             </a>
           </div>
         </div>
@@ -1016,7 +1274,7 @@
           <i data-lucide="droplet"></i> Application Demonstration #2
         </div>
         <h1 class="slide-title">RWI – Rayalaseema Water Initiative</h1>
-        <p class="slide-subtitle">Platform for presenting information and activities related to water, agriculture and development initiatives</p>
+        <p class="slide-subtitle">Digital platform for managing and monitoring the Rayalaseema programme, GIS spatial data & work progress</p>
       </div>
 
       <div class="grid-2">
@@ -1027,12 +1285,16 @@
           </div>
           <h3 class="card-title">Core System Capabilities</h3>
           <p class="card-desc">Information management and knowledge sharing portal for regional water programs</p>
-          
+
           <ul class="feature-list" style="margin-top: 1.25rem;">
-            <li><i data-lucide="check-circle-2"></i> <strong>Programme & Project Catalog:</strong> Structured categorization of water conservation & agri projects.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Resources & Knowledge Repository:</strong> Dynamic document library, policy guidelines, and research papers.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Events & Field Activities:</strong> Real-time activity calendars, event proceedings, and milestone logs.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Regional Data Insights:</strong> Hydrological and agricultural context for Rayalaseema region.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Programme & Project Catalog:</strong> Structured
+              categorization of water conservation & agri projects.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Resources & Knowledge Repository:</strong> Dynamic document
+              library, policy guidelines, and research papers.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Events & Field Activities:</strong> Real-time activity
+              calendars, event proceedings, and milestone logs.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Regional Data Insights:</strong> Hydrological and
+              agricultural context for Rayalaseema region.</li>
           </ul>
         </div>
 
@@ -1040,9 +1302,8 @@
         <div class="demo-steps-container">
           <div class="demo-header">
             <div class="demo-title" style="color: var(--accent-cyan);">
-              <i data-lucide="play-circle"></i> Demonstration Walkthrough
+              <i data-lucide="play-circle"></i> Features
             </div>
-            <span class="time-badge" style="background: rgba(2, 132, 199, 0.1); color: var(--accent-cyan); border-color: rgba(2, 132, 199, 0.3);">3 – 5 Minutes</span>
           </div>
 
           <div class="demo-steps">
@@ -1071,10 +1332,13 @@
           <div class="url-launcher-bar">
             <div class="url-input-group">
               <i data-lucide="link"></i>
-              <input type="text" class="url-input" id="rwiUrl" value="https://rayalaseemawater.org" placeholder="Enter RWI Live URL">
+              <input type="text" class="url-input" id="rwiUrl" value="https://rayalaseemawaterinitiative.in/"
+                placeholder="Enter RWI Live URL">
             </div>
-            <a href="https://rayalaseemawater.org" target="_blank" class="btn-launch" id="rwiLaunchBtn" style="background: linear-gradient(135deg, var(--accent-cyan), #0369a1);" onclick="launchUrl('rwiUrl'); return false;">
-              <i data-lucide="external-link"></i> Launch Live Website
+            <a href="https://rayalaseemawaterinitiative.in/" target="_blank" class="btn-launch" id="rwiLaunchBtn"
+              style="background: linear-gradient(135deg, var(--accent-cyan), #0369a1);"
+              onclick="launchUrl('rwiUrl'); return false;">
+              <i data-lucide="external-link"></i> Visit Website
             </a>
           </div>
         </div>
@@ -1088,7 +1352,8 @@
           <i data-lucide="sprout"></i> Application Demonstration #3
         </div>
         <h1 class="slide-title">SAVYA – Natural Farming Platform</h1>
-        <p class="slide-subtitle">Digital platform for collecting and managing information related to natural farming, participating households & plot data</p>
+        <p class="slide-subtitle">Digital platform for collecting and managing information related to natural farming,
+          participating households & plot data</p>
       </div>
 
       <div class="grid-2">
@@ -1099,12 +1364,16 @@
           </div>
           <h3 class="card-title">Core System Capabilities</h3>
           <p class="card-desc">End-to-end field data collection, beneficiary management, and monitoring workflows</p>
-          
+
           <ul class="feature-list" style="margin-top: 1.25rem;">
-            <li><i data-lucide="check-circle-2"></i> <strong>Digital Field Data Collection:</strong> Structured forms and mobile-friendly data intake.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Household & Farmer Profiling:</strong> Beneficiary demographics, landholding details, and crop history.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Farm & Plot Geo-Tagging:</strong> Plot level boundaries, crop practices, and input usage.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Activity & Yield Monitoring:</strong> Tracking adoption of natural farming practices and outcome metrics.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Digital Field Data Collection:</strong> Structured forms
+              and mobile-friendly data intake.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Household & Farmer Profiling:</strong> Beneficiary
+              demographics, landholding details, and crop history.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Farm & Plot Geo-Tagging:</strong> Plot level boundaries,
+              crop practices, and input usage.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Activity & Yield Monitoring:</strong> Tracking adoption of
+              natural farming practices and outcome metrics.</li>
           </ul>
         </div>
 
@@ -1112,9 +1381,8 @@
         <div class="demo-steps-container">
           <div class="demo-header">
             <div class="demo-title" style="color: var(--accent-amber);">
-              <i data-lucide="play-circle"></i> Workflow Demonstration
+              <i data-lucide="play-circle"></i> Features
             </div>
-            <span class="time-badge">3 – 5 Minutes</span>
           </div>
 
           <div class="demo-steps">
@@ -1143,67 +1411,15 @@
           <div class="url-launcher-bar">
             <div class="url-input-group">
               <i data-lucide="link"></i>
-              <input type="text" class="url-input" id="savyaUrl" value="https://savya.org.in" placeholder="Enter SAVYA Live URL">
+              <input type="text" class="url-input" id="savyaUrl" value="https://savya.wassan.org"
+                placeholder="Enter SAVYA Live URL">
             </div>
-            <a href="https://savya.org.in" target="_blank" class="btn-launch" id="savyaLaunchBtn" style="background: linear-gradient(135deg, var(--accent-amber), #b45309);" onclick="launchUrl('savyaUrl'); return false;">
-              <i data-lucide="external-link"></i> Launch Live Website
+            <a href="https://savya.wassan.org" target="_blank" class="btn-launch" id="savyaLaunchBtn"
+              style="background: linear-gradient(135deg, var(--accent-amber), #b45309);"
+              onclick="launchUrl('savyaUrl'); return false;">
+              <i data-lucide="external-link"></i> Visit Website
             </a>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 6: TRANSITION TO NRAA PORTAL -->
-    <div class="slide" id="slide-5">
-      <div class="slide-header">
-        <div class="slide-tag">
-          <i data-lucide="arrow-right-circle"></i> Key Transition
-        </div>
-        <h1 class="slide-title">Translating Capabilities to NRAA Portal</h1>
-        <p class="slide-subtitle">Bridging our established digital platforms to the specific requirements of National Rainfed Area Authority</p>
-      </div>
-
-      <div class="script-callout" style="border-left-color: var(--accent-blue);">
-        <div class="label" style="color: var(--accent-blue);"><i data-lucide="quote"></i> Presenter Transition Script</div>
-        <p>
-          "These are a few examples of the systems we have developed and supported. The purpose of showing them is to demonstrate that several of the requirements discussed for the NRAA portal—such as managing structured information, projects, geographical data, dashboards, documents and monitoring information—are capabilities that we have already worked with in different applications."
-        </p>
-        <p style="margin-top: 0.75rem; font-weight: 700; color: var(--text-main);">
-          "Based on your requirements, we can now look at which of these capabilities are applicable to the NRAA portal, what is already available, and what would need to be developed specifically for NRAA."
-        </p>
-      </div>
-
-      <div class="bridge-grid" style="margin-top: 1.5rem;">
-        <div class="bridge-card">
-          <div class="bridge-card-header">
-            <div class="bridge-req-title"><i data-lucide="map-pin" style="color:#2563eb; margin-right: 0.4rem;"></i> Spatial & GIS Mapping</div>
-            <span class="status-pill ready">Reusable Framework</span>
-          </div>
-          <div class="bridge-source">Proven in <span>JDH</span> — State/District/Block level boundary maps & rainfed area zoning</div>
-        </div>
-
-        <div class="bridge-card">
-          <div class="bridge-card-header">
-            <div class="bridge-req-title"><i data-lucide="file-text" style="color:#059669; margin-right: 0.4rem;"></i> Policy & Knowledge Repository</div>
-            <span class="status-pill ready">Ready Module</span>
-          </div>
-          <div class="bridge-source">Proven in <span>RWI</span> — Centralized document store, guidelines, and rainfed research papers</div>
-        </div>
-
-        <div class="bridge-card">
-          <div class="bridge-card-header">
-            <div class="bridge-req-title"><i data-lucide="sprout" style="color:#e11d48; margin-right: 0.4rem;"></i> Micro-Watershed & Farmer Data</div>
-            <span class="status-pill adaptable">Adaptable Data Engine</span>
-          </div>
-          <div class="bridge-source">Proven in <span>SAVYA</span> — Field data collection, plot profiling & natural farming practices</div>
-        </div>
-
-        <div class="bridge-card">
-          <div class="bridge-card-header">
-            <div class="bridge-req-title"><i data-lucide="bar-chart-3" style="color:#d97706; margin-right: 0.4rem;"></i> NRAA Scheme Monitoring Dashboard</div>
-            <span class="status-pill custom">Custom NRAA Build</span>
-          </div>
-          <div class="bridge-source">Customized synthesis of <span>JDH + SAVYA</span> dashboard engines configured for NRAA KPIs</div>
         </div>
       </div>
     </div>
@@ -1218,10 +1434,10 @@
     </div>
 
     <div class="nav-buttons-footer">
-      <button class="btn-nav" id="prevBtn" onclick="prevSlide()">
+      <button class="btn-nav-prev" id="prevBtn" onclick="prevSlide()">
         <i data-lucide="chevron-left"></i> Previous
       </button>
-      <button class="btn-nav active" id="nextBtn" onclick="nextSlide()">
+      <button class="btn-nav-next" id="nextBtn" onclick="nextSlide()">
         Next Slide <i data-lucide="chevron-right"></i>
       </button>
     </div>
@@ -1229,26 +1445,25 @@
 
   <script>
     // Slide Management State
-    const totalSlides = 6;
+    const totalSlides = 5;
     let currentSlide = 0;
     let speakerNotesVisible = false;
     let currentTheme = 'light';
 
     // Speaker Script mapping per slide
     const speakerScripts = [
-      `"We have reviewed the requirements shared for the NRAA portal. Before discussing how we would implement those requirements, we would like to show you some of the applications and websites that we have already developed and are currently working with. These examples will give you a practical understanding of our experience and the type of functionality we can provide."`,
-      `"Here is a summary matrix of our three primary platforms: JDH focusing on GIS monitoring, RWI focusing on regional water initiative content & documents, and SAVYA focusing on natural farming digital data collection. We will now walk through live demonstrations of each."`,
+      `"We have reviewed the requirements shared for the NRAA portal. Over past initiatives, we have established robust, scalable capabilities across GIS & Spatial Analysis, Data Collection & Analytics, and Web Portal Engineering. Before discussing how we would implement the NRAA portal, we would like to showcase live platforms where these capabilities are actively deployed."`,
+      `"Here is a summary matrix of our core platforms: JDH focusing on GIS monitoring, RWI focusing on regional water initiatives, SAVYA focusing on natural farming data collection, along with our specialized geospatial systems including the Utkoor Micro-Watershed GIS Portal and Drone Mapping Topography Portal."`,
       `"First, let us examine JDH (Jiwi Daah Hasa). This platform manages Jharkhand programme monitoring with GIS spatial mapping from State down to Village level, DPR details, and analytical dashboards. [Demo: Show Home -> Location Selection -> Map Layers -> DPR Data -> Dashboards]"`,
       `"Next, we move to RWI (Rayalaseema Water Initiative). This platform presents comprehensive water, agriculture, and development project information, resource documents, and regional data. [Demo: Show Home -> Projects -> Resource Downloads -> Regional Data]"`,
-      `"Our third example is SAVYA, a natural farming digital platform. Rather than explaining technology, let us look directly at the workflow: digital data collection, household/farmer registration, plot information, and monitoring dashboards."`,
-      `"These are a few examples of the systems we have developed and supported. The purpose of showing them is to demonstrate that several of the requirements discussed for the NRAA portal are capabilities that we have already worked with. Based on your requirements, we can now look at which of these capabilities are applicable to the NRAA portal, what is already available, and what would need to be developed specifically for NRAA."`
+      `"Our third example is SAVYA, a natural farming digital platform. Rather than explaining technology, let us look directly at the workflow: digital data collection, household/farmer registration, plot information, and monitoring dashboards."`
     ];
 
     function updateSlideUI() {
       // Toggle slide elements
       for (let i = 0; i < totalSlides; i++) {
         const slideEl = document.getElementById(`slide-${i}`);
-        const jumpChip = document.querySelectorAll('.jump-chip')[i];
+        const tabBtn = document.querySelectorAll('.nav-tab-btn')[i];
         if (slideEl) {
           if (i === currentSlide) {
             slideEl.classList.add('active');
@@ -1256,34 +1471,33 @@
             slideEl.classList.remove('active');
           }
         }
-        if (jumpChip) {
+        if (tabBtn) {
           if (i === currentSlide) {
-            jumpChip.classList.add('active');
+            tabBtn.classList.add('active');
           } else {
-            jumpChip.classList.remove('active');
+            tabBtn.classList.remove('active');
           }
         }
       }
 
       // Update indicator & progress bar
-      document.getElementById('slideIndicator').innerText = `Slide ${currentSlide + 1} / ${totalSlides}`;
+      document.getElementById('slideIndicator').innerText = `0${currentSlide + 1} / 0${totalSlides}`;
       const progressPercent = ((currentSlide + 1) / totalSlides) * 100;
       document.getElementById('progressBar').style.width = `${progressPercent}%`;
-
-      // Update presenter script text
-      document.getElementById('speakerNotesContent').innerText = speakerScripts[currentSlide];
 
       // Update prev/next button states
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       if (currentSlide === 0) {
-        prevBtn.style.opacity = '0.5';
+        prevBtn.style.opacity = '0.35';
+        prevBtn.style.pointerEvents = 'none';
       } else {
         prevBtn.style.opacity = '1';
+        prevBtn.style.pointerEvents = 'auto';
       }
 
       if (currentSlide === totalSlides - 1) {
-        nextBtn.innerHTML = `Finish Presentation <i data-lucide="check"></i>`;
+        nextBtn.innerHTML = `Finish <i data-lucide="check"></i>`;
       } else {
         nextBtn.innerHTML = `Next Slide <i data-lucide="chevron-right"></i>`;
       }
@@ -1292,15 +1506,15 @@
 
     function toggleTheme() {
       const root = document.documentElement;
-      const themeText = document.getElementById('themeText');
+      const themeIcon = document.getElementById('themeIcon');
       if (currentTheme === 'light') {
         currentTheme = 'dark';
         root.setAttribute('data-theme', 'dark');
-        themeText.innerText = 'Light Theme';
+        themeIcon.setAttribute('data-lucide', 'sun');
       } else {
         currentTheme = 'light';
         root.setAttribute('data-theme', 'light');
-        themeText.innerText = 'Dark Theme';
+        themeIcon.setAttribute('data-lucide', 'moon');
       }
       lucide.createIcons();
     }
@@ -1323,19 +1537,6 @@
       if (currentSlide > 0) {
         currentSlide--;
         updateSlideUI();
-      }
-    }
-
-    function toggleSpeakerNotes() {
-      speakerNotesVisible = !speakerNotesVisible;
-      const banner = document.getElementById('speakerNotesBanner');
-      const btn = document.getElementById('notesToggleBtn');
-      if (speakerNotesVisible) {
-        banner.classList.add('show');
-        btn.classList.add('active');
-      } else {
-        banner.classList.remove('show');
-        btn.classList.remove('active');
       }
     }
 
@@ -1370,8 +1571,6 @@
         prevSlide();
       } else if (e.key === 'f' || e.key === 'F') {
         toggleFullscreen();
-      } else if (e.key === 's' || e.key === 'S') {
-        toggleSpeakerNotes();
       }
     });
 
@@ -1382,7 +1581,7 @@
       const mins = Math.floor(secondsElapsed / 60).toString().padStart(2, '0');
       const secs = (secondsElapsed % 60).toString().padStart(2, '0');
       document.getElementById('presentationTimer').innerText = `${mins}:${secs}`;
-    }, 1000);  
+    }, 1000);
 
     // Interactive step highlight click handler
     document.addEventListener('click', (e) => {
@@ -1401,4 +1600,5 @@
     });
   </script>
 </body>
+
 </html>
