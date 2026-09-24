@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Demo & Walkthrough Components (demo.css)
+   ========================================================================== */
+
+.demo-steps-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+}
+
+.demo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.35rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border-card);
+}
+
+.demo-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-sun);
+}
+
+/* Demo Step Items */
+.demo-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.demo-step-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.15rem;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-card);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.demo-step-item:hover,
+.demo-step-item.active {
+  border-color: var(--color-leaf);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-leaf-light);
+  border: 1px solid var(--border-leaf);
+  color: var(--color-leaf);
+  font-weight: 800;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+}
+
+.step-text {
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+/* URL Launch & Input Bar */
+.url-launcher-bar {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.url-input-group {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: var(--bg-input);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 0 0.9rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.url-input-group i {
+  color: var(--text-dim);
+  margin-right: 0.5rem;
+}
+
+.url-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  padding: 0.65rem 0;
+  outline: none;
+}
+
+/* Action Buttons */
+.btn-launch {
+  background: linear-gradient(135deg, var(--color-leaf), var(--color-leaf-hover));
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.86rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-shadow: 0 2px 8px var(--color-leaf-glow);
+  font-family: var(--font-body);
+}
+
+.btn-launch:hover {
+  box-shadow: 0 4px 16px var(--color-leaf-glow);
+  transform: translateY(-1px);
+}

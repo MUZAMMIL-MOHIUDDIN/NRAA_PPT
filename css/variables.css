@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Agri-Tech Design System Tokens (variables.css)
+   ========================================================================== */
+
+:root,
+:root[data-theme="light"] {
+  /* Warm Agri-Tech Backgrounds */
+  --bg-page: #fbfbf8;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-subtle: #f5f5ee;
+  --bg-sun-tint: #fefce8;
+  --bg-sage-tint: #f0fdf4;
+  --bg-header: rgba(251, 251, 248, 0.94);
+  --bg-input: #ffffff;
+
+  /* Fresh Organic Greens & Crop Accents */
+  --color-forest: #14532d;
+  --color-leaf: #16a34a;
+  --color-leaf-hover: #15803d;
+  --color-leaf-glow: rgba(22, 163, 74, 0.2);
+  --color-leaf-light: #dcfce7;
+  --border-leaf: rgba(22, 163, 74, 0.25);
+
+  /* Earthy Neutrals & Natural Stone */
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --text-muted: #78716c;
+  --text-dim: #a8a29e;
+  --border-subtle: #e7e5e4;
+  --border-card: #e5e5dc;
+
+  /* Sunlight, Harvest Gold & Warm Amber */
+  --color-sun: #ca8a04;
+  --color-sun-bg: #fef9c3;
+  --color-sun-border: #fde047;
+  --color-amber: #d97706;
+  --color-amber-bg: #fef3c7;
+
+  /* Water & Hydrology Accents */
+  --color-water: #0284c7;
+  --color-water-bg: #e0f2fe;
+  --color-water-border: #bae6fd;
+
+  /* Spatial & Drone Accents */
+  --color-spatial: #7c3aed;
+  --color-spatial-bg: #ede9fe;
+
+  /* Shadows & Radius */
+  --shadow-sm: 0 1px 2px 0 rgba(28, 25, 23, 0.04);
+  --shadow-card: 0 4px 16px -2px rgba(41, 37, 36, 0.05), 0 1px 3px rgba(41, 37, 36, 0.03);
+  --shadow-card-hover: 0 12px 28px -4px rgba(41, 37, 36, 0.09), 0 2px 6px rgba(41, 37, 36, 0.04);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --bg-page: #0f1712;
+  --bg-surface: #17241c;
+  --bg-surface-elevated: #1e2f24;
+  --bg-subtle: #121d16;
+  --bg-sun-tint: rgba(202, 138, 4, 0.1);
+  --bg-sage-tint: rgba(22, 163, 74, 0.08);
+  --bg-header: rgba(15, 23, 18, 0.92);
+  --bg-input: rgba(0, 0, 0, 0.35);
+
+  --color-forest: #86efac;
+  --color-leaf: #22c55e;
+  --color-leaf-hover: #16a34a;
+  --color-leaf-glow: rgba(34, 197, 94, 0.25);
+  --color-leaf-light: rgba(34, 197, 94, 0.15);
+  --border-leaf: rgba(34, 197, 94, 0.35);
+
+  --text-primary: #f5f5f4;
+  --text-secondary: #d6d3d1;
+  --text-muted: #a8a29e;
+  --text-dim: #78716c;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.12);
+
+  --color-sun: #facc15;
+  --color-sun-bg: rgba(250, 204, 21, 0.15);
+  --color-sun-border: rgba(250, 204, 21, 0.3);
+  --color-amber: #fbbf24;
+  --color-amber-bg: rgba(251, 191, 36, 0.15);
+
+  --color-water: #38bdf8;
+  --color-water-bg: rgba(56, 189, 248, 0.15);
+  --color-water-border: rgba(56, 189, 248, 0.3);
+
+  --color-spatial: #a78bfa;
+  --color-spatial-bg: rgba(167, 139, 250, 0.15);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 6px 20px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 14px 32px rgba(0, 0, 0, 0.5);
+}

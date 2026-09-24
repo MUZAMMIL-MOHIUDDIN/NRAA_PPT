@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Footer & Control Buttons (footer.css)
+   ========================================================================== */
+
+footer.pres-footer {
+  background: var(--bg-header);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-card);
+  padding: 0.95rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 -2px 10px rgba(41, 37, 36, 0.03);
+}
+
+.nav-buttons-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.btn-nav-prev,
+.btn-nav-next {
+  height: 42px;
+  padding: 0 1.35rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  font-family: var(--font-body);
+}
+
+.btn-nav-prev {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+.btn-nav-prev:hover {
+  background: var(--bg-subtle);
+  border-color: var(--color-leaf);
+  color: var(--color-leaf);
+  transform: translateX(-2px);
+}
+
+.btn-nav-next {
+  background: linear-gradient(135deg, var(--color-leaf), var(--color-leaf-hover));
+  color: #ffffff;
+  border-color: var(--color-leaf);
+  box-shadow: 0 2px 10px var(--color-leaf-glow);
+}
+
+.btn-nav-next:hover {
+  box-shadow: 0 4px 18px var(--color-leaf-glow);
+  transform: translateX(2px);
+}
+
+/* Elapsed Timer */
+.time-counter {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-card);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+.time-counter i {
+  color: var(--color-leaf);
+}

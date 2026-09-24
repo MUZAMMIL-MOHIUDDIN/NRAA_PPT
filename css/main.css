@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Agri-Tech Master Stylesheet (main.css)
+   Imports modular component-specific CSS stylesheets
+   ========================================================================== */
+
+@import './variables.css';
+@import './base.css';
+@import './header.css';
+@import './cards.css';
+@import './table.css';
+@import './demo.css';
+@import './footer.css';

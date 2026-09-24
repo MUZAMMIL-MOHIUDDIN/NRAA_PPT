@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Header & Navigation Component (header.css)
+   ========================================================================== */
+
+header.pres-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 66px;
+  background: var(--bg-header);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-card);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Brand Logo Stack */
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--bg-sage-tint), var(--color-leaf-light));
+  border: 1px solid var(--border-leaf);
+  color: var(--color-leaf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.1);
+}
+
+.brand-text-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.brand-subtitle {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-leaf);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+/* Segmented Tab Navigation Track */
+.nav-tabs-track {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-card);
+  padding: 4px;
+  border-radius: var(--radius-md);
+}
+
+.nav-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--font-body);
+}
+
+.nav-tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+:root[data-theme="dark"] .nav-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-tab-btn.active {
+  background: var(--bg-surface);
+  color: var(--color-leaf);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(41, 37, 36, 0.07);
+}
+
+/* Header Control Actions */
+.pres-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.btn-icon-action {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-icon-action:hover {
+  border-color: var(--color-leaf);
+  color: var(--color-leaf);
+  transform: translateY(-1px);
+}
+
+.slide-counter-badge {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--color-leaf);
+  background: var(--bg-sage-tint);
+  border: 1px solid var(--border-leaf);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+  font-family: var(--font-heading);
+}
+
+/* Header Bottom Progress Line */
+.progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(90deg, var(--color-leaf), var(--color-sun));
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
