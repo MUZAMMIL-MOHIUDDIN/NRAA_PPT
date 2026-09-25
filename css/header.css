@@ -26,17 +26,17 @@ header.pres-header {
 }
 
 .brand-icon-box {
-  width: 40px;
-  height: 40px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, var(--bg-sage-tint), var(--color-leaf-light));
-  border: 1px solid var(--border-leaf);
-  color: var(--color-leaf);
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid var(--border-card);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(22, 163, 74, 0.1);
+  padding: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
 }
 
 .brand-text-stack {
@@ -47,9 +47,9 @@ header.pres-header {
 .brand-title {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--text-primary);
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.2px;
 }
 

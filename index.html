@@ -110,15 +110,17 @@
     }
 
     .brand-icon-box {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: rgba(5, 150, 105, 0.12);
-      color: var(--accent-emerald);
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      padding: 2px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
     }
 
     .brand-text-stack {
@@ -129,9 +131,9 @@
     .brand-title {
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       color: var(--text-main);
-      line-height: 1.2;
+      line-height: 1.15;
     }
 
     .brand-subtitle {
@@ -723,6 +725,14 @@
       color: #7c3aed;
     }
 
+    .portal-tag-ifc {
+      color: #0d9488;
+    }
+
+    .portal-tag-lrc {
+      color: #ea580c;
+    }
+
     .feature-tag-chip {
       display: inline-block;
       background: var(--bg-dark);
@@ -946,11 +956,29 @@
   <header class="pres-header">
     <div class="brand-logo-container">
       <div class="brand-icon-box">
-        <i data-lucide="shield-check"></i>
+        <svg viewBox="6 10 88 78" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+          <!-- Water Drop -->
+          <path d="M24 16 C24 16 38 37 38 49 C38 58 32 65 24 65 C16 65 10 58 10 49 C10 37 24 16 24 16 Z"
+            fill="#1b68a6" />
+          <path d="M29 32 C31 38 31 46 28 53" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" />
+          <!-- Flowing waves/leaves -->
+          <path d="M37 66 C40 45 47 24 55 12" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round" fill="none" />
+          <path d="M45 69 C48 48 55 27 63 15" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round" fill="none" />
+          <path d="M53 71 C56 53 65 34 76 21" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round" fill="none" />
+          <!-- Grain stalk & pearls -->
+          <path d="M55 58 C64 46 73 35 86 18" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" fill="none" />
+          <circle cx="73" cy="27" r="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+          <circle cx="78" cy="22" r="3.2" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+          <circle cx="84" cy="17" r="3.5" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+          <circle cx="89" cy="13" r="2.8" fill="#ffffff" stroke="#1e293b" stroke-width="1.8" />
+          <!-- Lower tail swoosh -->
+          <path d="M58 54 C66 61 77 67 76 77 C75 83 67 82 64 78" stroke="#1e293b" stroke-width="2.6"
+            stroke-linecap="round" fill="none" />
+        </svg>
       </div>
       <div class="brand-text-stack">
-        <span class="brand-title">NRAA Portal Capabilities</span>
-        <span class="brand-subtitle">Credentials Presentation</span>
+        <span class="brand-title">WASSAN</span>
+        <span class="brand-subtitle">Tech Team Portfolio</span>
       </div>
     </div>
 
@@ -960,6 +988,8 @@
       <button class="nav-tab-btn" onclick="goToSlide(2)">3. JDH</button>
       <button class="nav-tab-btn" onclick="goToSlide(3)">4. RWI</button>
       <button class="nav-tab-btn" onclick="goToSlide(4)">5. SAVYA</button>
+      <button class="nav-tab-btn" onclick="goToSlide(5)">6. GIS & Spatial Data</button>
+      <button class="nav-tab-btn" onclick="goToSlide(6)">7. Drone</button>
     </div>
 
     <div class="pres-controls">
@@ -969,7 +999,7 @@
       <button class="btn-icon-action" onclick="toggleFullscreen()" title="Toggle Fullscreen">
         <i data-lucide="maximize"></i>
       </button>
-      <div class="slide-counter-badge" id="slideIndicator">01 / 05</div>
+      <div class="slide-counter-badge" id="slideIndicator">01 / 07</div>
     </div>
 
     <div class="progress-bar-container">
@@ -991,20 +1021,20 @@
 
 
       <div class="grid-3" style="margin-top: 2rem;">
-        <!-- Card 1: GIS Spatial Analysis -->
+        <!-- Card 1: Web Development -->
         <div class="glass-card highlight">
-          <div class="card-icon-box blue">
-            <i data-lucide="map-pin"></i>
+          <div class="card-icon-box cyan">
+            <i data-lucide="globe"></i>
           </div>
-          <h3 class="card-title">GIS & Spatial Analysis</h3>
-          <p class="card-desc">Comprehensive spatial data processing, multi-layer mapping & watershed intelligence</p>
+          <h3 class="card-title">Web & Portal Development</h3>
+          <p class="card-desc">Scalable and reliable web applications supporting WASSAN and its partners</p>
           <ul class="feature-list">
-            <li><i data-lucide="check-circle-2"></i> <strong>Multi-Tier Geo Hierarchy:</strong> State &rarr; District
-              &rarr; Block &rarr; Village mapping</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Watershed & Thematic Layers:</strong> Spatial zoning,
-              hydrology & slope overlays</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Plot Geo-Tagging:</strong> Farm boundary digitisation &
-              coordinate verification</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Knowledge Repositories:</strong> Searchable document stores
+              & policy libraries</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Role-Based Access:</strong> Multi-stakeholder permission
+              hierarchies</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Modern Scalable Architecture:</strong> Responsive, fast &
+              Modern, fast and reliable web applications</li>
           </ul>
         </div>
 
@@ -1014,7 +1044,7 @@
             <i data-lucide="bar-chart-3"></i>
           </div>
           <h3 class="card-title">Data Analysis & Monitoring</h3>
-          <p class="card-desc">End-to-end data intake engines, beneficiary registries & executive dashboards</p>
+          <p class="card-desc">Data collection, beneficiary management & reporting dashboards</p>
           <ul class="feature-list">
             <li><i data-lucide="check-circle-2"></i> <strong>Digital Field Intake:</strong> Structured mobile-friendly
               survey workflows</li>
@@ -1025,20 +1055,21 @@
           </ul>
         </div>
 
-        <!-- Card 3: Web Development -->
+        <!-- Card 3: GIS Spatial Analysis -->
         <div class="glass-card highlight">
-          <div class="card-icon-box cyan">
-            <i data-lucide="globe"></i>
+          <div class="card-icon-box blue">
+            <i data-lucide="map-pin"></i>
           </div>
-          <h3 class="card-title">Web & Portal Development</h3>
-          <p class="card-desc">Secure, high-performance web applications tailored for government & regional programs</p>
+          <h3 class="card-title">GIS & Spatial Analysis</h3>
+          <p class="card-desc">Remote Sensing & Spatial data processing, mapping & watershed analysis</p>
           <ul class="feature-list">
-            <li><i data-lucide="check-circle-2"></i> <strong>Knowledge Repositories:</strong> Searchable document stores
-              & policy libraries</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Role-Based Access:</strong> Multi-stakeholder permission
-              hierarchies</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Modern Scalable Architecture:</strong> Responsive, fast &
-              cloud-ready portals</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Multi-Tier Geo Hierarchy:</strong> State &rarr; District
+              &rarr; Block &rarr; Village mapping</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Watershed & Thematic Layers:</strong> Spatial zoning,
+              hydrology & slope overlays</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>GeoTagging & GeoFencing:</strong>Individual and
+              community assets (e.g.: Commons,Farm Boundary, Well)
+              digitisation </li>
           </ul>
         </div>
       </div>
@@ -1073,7 +1104,7 @@
               <td>Programme Data, GIS & Progress Monitoring</td>
               <td>
                 <span class="feature-tag-chip">GIS & Maps</span>
-                <span class="feature-tag-chip">State/District/Block/Village</span>
+                <span class="feature-tag-chip">State/District/Block/Village (Regional Data)</span>
                 <span class="feature-tag-chip">DPR Info</span>
                 <span class="feature-tag-chip">Dashboards</span>
               </td>
@@ -1094,10 +1125,12 @@
               </td>
               <td>Programme Data, GIS & Progress Monitoring</td>
               <td>
-                <span class="feature-tag-chip">Projects & Initiatives</span>
+                <span class="feature-tag-chip">GIS & Maps</span>
+                <span class="feature-tag-chip">State/District/Block/Village (Regional Data)</span>
+                <span class="feature-tag-chip">Dashboards</span>
                 <span class="feature-tag-chip">Resources & Library</span>
-                <span class="feature-tag-chip">Events/Activities</span>
-                <span class="feature-tag-chip">Regional Data</span>
+                <span class="feature-tag-chip">Events/Workshops</span>
+
               </td>
               <td>
                 <a href="#" class="btn-launch" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;"
@@ -1133,20 +1166,19 @@
             <tr>
               <td>
                 <div class="portal-badge portal-tag-utkoor">
-                  <i data-lucide="map"></i> UTKOOR
+                  <i data-lucide="map"></i> GIS and Spatial Data
                 </div>
                 <div style="font-size: 0.75rem; color: var(--text-dim);">Micro-Watershed GIS Portal</div>
               </td>
               <td>Village Geospatial & Watershed Analytics</td>
               <td>
-                <span class="feature-tag-chip">Cadastral Maps</span>
                 <span class="feature-tag-chip">Micro-Watershed GIS</span>
                 <span class="feature-tag-chip">Water Assets</span>
                 <span class="feature-tag-chip">Spatial Layers</span>
               </td>
               <td>
-                <a href="https://gowtam-wassan.github.io/UTKOOR_Portal/" target="_blank" class="btn-launch"
-                  style="padding: 0.35rem 0.75rem; font-size: 0.78rem; background: linear-gradient(135deg, #0284c7, #0369a1);">
+                <a href="#" class="btn-launch" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;"
+                  onclick="goToSlide(5); return false;">
                   <i data-lucide="external-link"></i> Visit
                 </a>
               </td>
@@ -1168,8 +1200,56 @@
                 <span class="feature-tag-chip">Contour Layers</span>
               </td>
               <td>
-                <a href="https://gowtam-wassan.github.io/Drone_Mapping/" target="_blank" class="btn-launch"
-                  style="padding: 0.35rem 0.75rem; font-size: 0.78rem; background: linear-gradient(135deg, #7c3aed, #6d28d9);">
+                <a href="#" class="btn-launch"
+                  style="padding: 0.35rem 0.75rem; font-size: 0.78rem; background: linear-gradient(135deg, #7c3aed, #6d28d9);"
+                  onclick="goToSlide(6); return false;">
+                  <i data-lucide="external-link"></i> Visit
+                </a>
+              </td>
+            </tr>
+
+            <!-- Row 6: IFCVedika -->
+            <tr>
+              <td>
+                <div class="portal-badge portal-tag-ifc">
+                  <i data-lucide="book-open"></i> IFCVedika
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-dim);">Integrated Farming Platform</div>
+              </td>
+              <td>Knowledge, Practice & Capacity Building Repository</td>
+              <td>
+                <span class="feature-tag-chip"><strong>FPO Graduate Tool</strong></span>
+                <span class="feature-tag-chip">Knowledge Repository</span>
+                <span class="feature-tag-chip">Training Modules</span>
+                <span class="feature-tag-chip">Farmer Advisory</span>
+                <span class="feature-tag-chip">Best Practices</span>
+              </td>
+              <td>
+                <a href="https://ifcvedika.wassan.org" target="_blank" class="btn-launch"
+                  style="padding: 0.35rem 0.75rem; font-size: 0.78rem; background: linear-gradient(135deg, #0d9488, #0f766e);">
+                  <i data-lucide="external-link"></i> Visit
+                </a>
+              </td>
+            </tr>
+
+            <!-- Row 7: LRC-MAP -->
+            <tr>
+              <td>
+                <div class="portal-badge portal-tag-lrc">
+                  <i data-lucide="map"></i> Multi-Actor platform(MAP)
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-dim);">Land Resource Centre</div>
+              </td>
+              <td>Block Level convergence</td>
+              <td>
+                <span class="feature-tag-chip">Action groups</span>
+                <span class="feature-tag-chip">Knowledge sharing</span>
+                <span class="feature-tag-chip">Schemes / Projects</span>
+                <span class="feature-tag-chip">Spatial Planning</span>
+              </td>
+              <td>
+                <a href="https://gowtam-wassan.github.io/LRC-MAP/" target="_blank" class="btn-launch"
+                  style="padding: 0.35rem 0.75rem; font-size: 0.78rem; background: linear-gradient(135deg, #ea580c, #c2410c);">
                   <i data-lucide="external-link"></i> Visit
                 </a>
               </td>
@@ -1186,7 +1266,8 @@
           <i data-lucide="map"></i> Application Demonstration #1
         </div>
         <h1 class="slide-title">JDH – Jiwi Daah Hasa</h1>
-        <p class="slide-subtitle">Digital platform for managing and monitoring the Jharkhand programme and related
+        <p class="slide-subtitle">Digital platform for managing and monitoring the Jharkhand Mega Watershed programme
+          and related
           spatial data</p>
       </div>
 
@@ -1206,8 +1287,8 @@
               watershed boundaries, and interactive maps.</li>
             <li><i data-lucide="check-circle-2"></i> <strong>Programme & DPR Management:</strong> Detailed Project
               Report tracking, work status, and progress monitoring.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Analytical Dashboards:</strong> Automated reporting engines
-              and data export utilities.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Analytical Dashboards:</strong> Automated reporting and
+              data export.</li>
           </ul>
         </div>
 
@@ -1269,7 +1350,8 @@
           <i data-lucide="droplet"></i> Application Demonstration #2
         </div>
         <h1 class="slide-title">RWI – Rayalaseema Water Initiative</h1>
-        <p class="slide-subtitle">Digital platform for managing and monitoring the Rayalaseema programme, GIS spatial
+        <p class="slide-subtitle">Digital platform for managing and monitoring the Rayalaseema Water Initiative
+          programme, GIS spatial
           data & work progress</p>
       </div>
 
@@ -1283,14 +1365,15 @@
           <p class="card-desc">Information management and knowledge sharing portal for regional water programs</p>
 
           <ul class="feature-list" style="margin-top: 1.25rem;">
-            <li><i data-lucide="check-circle-2"></i> <strong>Programme & Project Catalog:</strong> Structured
-              categorization of water conservation & agri projects.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Real Time Data:</strong> Access to real time data across
+              multiple stake holders.</li>
             <li><i data-lucide="check-circle-2"></i> <strong>Resources & Knowledge Repository:</strong> Dynamic document
               library, policy guidelines, and research papers.</li>
             <li><i data-lucide="check-circle-2"></i> <strong>Events & Field Activities:</strong> Real-time activity
               calendars, event proceedings, and milestone logs.</li>
-            <li><i data-lucide="check-circle-2"></i> <strong>Regional Data Insights:</strong> Hydrological and
-              agricultural context for Rayalaseema region.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Farm / Plot level spatial data repository:</strong>
+              Hydrological and
+              agricultural context for respective panchayats.</li>
           </ul>
         </div>
 
@@ -1320,7 +1403,7 @@
             </div>
             <div class="demo-step-item">
               <div class="step-num" style="background: rgba(2, 132, 199, 0.15); color: var(--accent-cyan);">4</div>
-              <div class="step-text">Relevant Hydrological Data & Information Section</div>
+              <div class="step-text">Habitation and panchayat level spatial data </div>
               <i data-lucide="chevron-right" style="color: var(--text-dim);"></i>
             </div>
           </div>
@@ -1359,7 +1442,7 @@
             <i data-lucide="database"></i>
           </div>
           <h3 class="card-title">Core System Capabilities</h3>
-          <p class="card-desc">End-to-end field data collection, beneficiary management, and monitoring workflows</p>
+          <p class="card-desc">Data collection, beneficiary management & reporting dashboards</p>
 
           <ul class="feature-list" style="margin-top: 1.25rem;">
             <li><i data-lucide="check-circle-2"></i> <strong>Digital Field Data Collection:</strong> Structured forms
@@ -1420,6 +1503,176 @@
       </div>
     </div>
 
+    <!-- SLIDE 6: GIS AND SPATIAL DATA -->
+    <div class="slide" id="slide-5">
+      <div class="slide-header">
+        <div class="slide-tag">
+          <i data-lucide="layers"></i> Spatial Intelligence & Geospatial Systems
+        </div>
+        <h1 class="slide-title">GIS and Spatial Data</h1>
+        <p class="slide-subtitle">Advanced geospatial analytics, remote sensing data extraction, thematic layer
+          modelling & resource digitisation</p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Main Features Card -->
+        <div class="glass-card">
+          <div class="card-icon-box blue">
+            <i data-lucide="map-pin"></i>
+          </div>
+          <h3 class="card-title">Core Spatial Capabilities</h3>
+          <p class="card-desc">Comprehensive spatial intelligence, terrain modeling & digital mapping</p>
+
+          <ul class="feature-list" style="margin-top: 1.25rem;">
+            <li><i data-lucide="check-circle-2"></i> <strong>Remote Sensing Data & Analysis:</strong>
+              Multi-spectral satellite data processing, indices (NDVI/NDWI), LULC classification &
+              change detection and others</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Resource Mapping & Digitisation:</strong>
+              Digitisation of Individaul assets and community commons.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Thematic Layers:</strong> Multi-layer spatial overlays
+              including micro-watersheds, drainage networks, contours, slope profiles, soil types, and others.
+            </li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Capacity Building:</strong> Hands-on training, GIS
+              toolkits, participatory mapping, and geospatial enablement for teams & local cadres.</li>
+          </ul>
+        </div>
+
+        <!-- Guided Live Demo Steps -->
+        <div class="demo-steps-container">
+          <div class="demo-header">
+            <div class="demo-title" style="color: var(--accent-blue);">
+              <i data-lucide="play-circle"></i> Features
+            </div>
+          </div>
+
+          <div class="demo-steps">
+            <div class="demo-step-item active">
+              <div class="step-num" style="background: rgba(37, 99, 235, 0.15); color: var(--accent-blue);">1</div>
+              <div class="step-text">Remote Sensing Data Extraction & Spatial Analytics</div>
+              <i data-lucide="chevron-right" style="color: var(--text-dim);"></i>
+            </div>
+            <div class="demo-step-item">
+              <div class="step-num" style="background: rgba(37, 99, 235, 0.15); color: var(--accent-blue);">2</div>
+              <div class="step-text">Resource Mapping & Boundary Digitisation</div>
+              <i data-lucide="chevron-right" style="color: var(--text-dim);"></i>
+            </div>
+            <div class="demo-step-item">
+              <div class="step-num" style="background: rgba(37, 99, 235, 0.15); color: var(--accent-blue);">3</div>
+              <div class="step-text">Thematic Layer Overlays & Multi-Criteria Spatial Querying</div>
+              <i data-lucide="chevron-right" style="color: var(--text-dim);"></i>
+            </div>
+            <div class="demo-step-item">
+              <div class="step-num" style="background: rgba(37, 99, 235, 0.15); color: var(--accent-blue);">4</div>
+              <div class="step-text">Capacity Building & Field Geospatial Training</div>
+              <i data-lucide="chevron-right" style="color: var(--text-dim);"></i>
+            </div>
+          </div>
+
+          <div class="url-launcher-bar">
+            <div class="url-input-group">
+              <i data-lucide="link"></i>
+              <input type="text" class="url-input" id="gisSpatialUrl"
+                value="https://gowtam-wassan.github.io/UTKOOR_Portal/" placeholder="Enter GIS Portal URL">
+            </div>
+            <a href="https://gowtam-wassan.github.io/UTKOOR_Portal/" target="_blank" class="btn-launch"
+              id="gisSpatialLaunchBtn" style="background: linear-gradient(135deg, var(--accent-blue), #1d4ed8);"
+              onclick="launchUrl('gisSpatialUrl'); return false;">
+              <i data-lucide="external-link"></i> Visit Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: DRONE -->
+    <div class="slide" id="slide-6">
+      <div class="slide-header">
+        <div class="slide-tag">
+          <i data-lucide="crosshair"></i> Aerial Surveys & High-Resolution Topography
+        </div>
+        <h1 class="slide-title">Drone</h1>
+        <p class="slide-subtitle">High-resolution aerial surveys, community-led mapping, local youth empowerment &
+          spatial planning</p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Main Features Card -->
+        <div class="glass-card">
+          <div class="card-icon-box purple" style="background: rgba(124, 58, 237, 0.12); color: #7c3aed;">
+            <i data-lucide="crosshair"></i>
+          </div>
+          <h3 class="card-title">Drone Survey & Community Mapping</h3>
+          <p class="card-desc">Community-centric drone operations, youth training, elevation modeling & high-precision
+            ortho-imagery</p>
+
+          <ul class="feature-list" style="margin-top: 1.25rem;">
+            <li><i data-lucide="check-circle-2"></i> <strong>Flying Operations by Local Youth:</strong> Empowering
+              trained local and rural youth to independently execute flight missions and aerial field operations.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Trainings on Drone Operations:</strong> Comprehensive
+              hands-on modules on Mission Planning, Navigation,Safety measures and Ethical flying</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Mapping with Community:</strong> Participatory Mapping of
+              Resources and Assets along with community
+            </li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Planning and Monitoring:</strong> Evidence-backed NRM
+              planning, work progress tracking and temporal impact monitoring.</li>
+            <li><i data-lucide="check-circle-2"></i> <strong>Latest and Very High Resolution Ortho Photos:</strong>
+              One Day old orthomosaic Images, Digital Elevation Models (DEM), and precision
+              contour layers.</li>
+          </ul>
+        </div>
+
+        <!-- Guided Live Demo Steps -->
+        <div class="demo-steps-container">
+          <div class="demo-header">
+            <div class="demo-title" style="color: #7c3aed;">
+              <i data-lucide="play-circle"></i> Features
+            </div>
+          </div>
+
+          <div class="demo-steps">
+            <div class="demo-step-item active">
+              <div class="step-num" style="background: rgba(124, 58, 237, 0.15); color: #7c3aed;">1</div>
+              <div class="step-text">Drone Flight Operations by Local youth</div>
+              <i data-lucide="chevron-right" style="color: var(--text-dim);"></i>
+            </div>
+            <div class="demo-step-item">
+              <div class="step-num" style="background: rgba(124, 58, 237, 0.15); color: #7c3aed;">2</div>
+              <div class="step-text">Hands-On Technical Trainings on Drone Operations</div>
+              <i data-lucide="chevron-right" style="color: var(--text-dim);"></i>
+            </div>
+            <div class="demo-step-item">
+              <div class="step-num" style="background: rgba(124, 58, 237, 0.15); color: #7c3aed;">3</div>
+              <div class="step-text">Participatory Community Resource & Asset Mapping</div>
+              <i data-lucide="chevron-right" style="color: var(--text-dim);"></i>
+            </div>
+            <div class="demo-step-item">
+              <div class="step-num" style="background: rgba(124, 58, 237, 0.15); color: #7c3aed;">4</div>
+              <div class="step-text">Intervention Planning & Monitoring</div>
+              <i data-lucide="chevron-right" style="color: var(--text-dim);"></i>
+            </div>
+            <div class="demo-step-item">
+              <div class="step-num" style="background: rgba(124, 58, 237, 0.15); color: #7c3aed;">5</div>
+              <div class="step-text">High Resolution Ortho Photos & 3D Topography</div>
+              <i data-lucide="chevron-right" style="color: var(--text-dim);"></i>
+            </div>
+          </div>
+
+          <div class="url-launcher-bar">
+            <div class="url-input-group">
+              <i data-lucide="link"></i>
+              <input type="text" class="url-input" id="droneUrl" value="https://gowtam-wassan.github.io/Drone_Mapping/"
+                placeholder="Enter Drone Mapping URL">
+            </div>
+            <a href="https://gowtam-wassan.github.io/Drone_Mapping/" target="_blank" class="btn-launch"
+              id="droneLaunchBtn" style="background: linear-gradient(135deg, #7c3aed, #6d28d9);"
+              onclick="launchUrl('droneUrl'); return false;">
+              <i data-lucide="external-link"></i> Visit Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- Bottom Navigation & Controls Footer -->
@@ -1441,7 +1694,7 @@
 
   <script>
     // Slide Management State
-    const totalSlides = 5;
+    const totalSlides = 7;
     let currentSlide = 0;
     let speakerNotesVisible = false;
     let currentTheme = 'light';
@@ -1452,7 +1705,9 @@
       `"Here is a summary matrix of our core platforms: JDH focusing on GIS monitoring, RWI focusing on regional water initiatives, SAVYA focusing on natural farming data collection, along with our specialized geospatial systems including the Utkoor Micro-Watershed GIS Portal and Drone Mapping Topography Portal."`,
       `"First, let us examine JDH (Jiwi Daah Hasa). This platform manages Jharkhand programme monitoring with GIS spatial mapping from State down to Village level, DPR details, and analytical dashboards. [Demo: Show Home -> Location Selection -> Map Layers -> DPR Data -> Dashboards]"`,
       `"Next, we move to RWI (Rayalaseema Water Initiative). This platform presents comprehensive water, agriculture, and development project information, resource documents, and regional data. [Demo: Show Home -> Projects -> Resource Downloads -> Regional Data]"`,
-      `"Our third example is SAVYA, a natural farming digital platform. Rather than explaining technology, let us look directly at the workflow: digital data collection, household/farmer registration, plot information, and monitoring dashboards."`
+      `"Our third example is SAVYA, a natural farming digital platform. Rather than explaining technology, let us look directly at the workflow: digital data collection, household/farmer registration, plot information, and monitoring dashboards."`,
+      `"Next, we explore our GIS and Spatial Data capabilities. This encompasses remote sensing data extraction, precision asset and resource mapping, comprehensive multi-layer thematic overlays (drainage, slope, cadastral), and capacity building programs to empower field teams with geospatial tools."`,
+      `"Finally, we highlight our Drone survey capabilities. We train and engage local youth for flying operations, conduct participatory community resource mapping, utilize drone data for planning and monitoring, and generate very high resolution orthophotos and 3D elevation models."`
     ];
 
     function updateSlideUI() {
